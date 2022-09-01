@@ -7,6 +7,14 @@ import java.util.Scanner;
 
 public class Utils {
 
+	private static Utils instancia;
+
+	public static Utils obtenerInstancia() {
+		if(instancia==null)
+			instancia=new Utils();
+		return instancia;
+	}
+
 	/**
 	 * Imprime el numero y un * por cada vez que se encuentra en el array
 	 * Si no esta imprime el numero sin ningun *
@@ -68,6 +76,9 @@ public class Utils {
 		System. out. println(result);
 	}
 
+	/**
+	 * Imprime una X conformada por las letras X y en los espacios _
+	 */
 	public void dibujarX() {
 		int n=5;
 		String cadenaBase="";
@@ -119,8 +130,11 @@ public class Utils {
 		System. out. println(result.trim());
 	}
 
-	public void dibujarX1() {
-		int n=6;			
+	/**
+	 * Dibuja un tablero alternando X y _
+	 */
+	public void dibujarTablero() {
+		int n=8;			
 		if(n>10)
 			n=5;
 		if(n<1)
@@ -141,7 +155,7 @@ public class Utils {
 			System. out. println(cadena);
 		}
 	}
-	
+
 
 	public void elevadoCuadrado(){
 		Scanner in = new Scanner(System.in);
